@@ -1,0 +1,26 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    background-color: black;
+    color: antiquewhite;
+}
+.user{
+    padding: 25px;
+}
+form{
+    padding-top: 20px;
+}
+form input{
+    margin-top: 10px;
+    height: 33px;
+    width: 16%;
+    background-color: rgba(50, 41, 41, 0.463);
+    color: antiquewhite;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    
+}

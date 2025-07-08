@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    background-color: black;
+    color: antiquewhite;
+}
+.user{
+    padding: 10px;
+}
+h3{
+    padding-top: 10px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+h3 a{
+    text-decoration: none;
+    color: rgb(37, 108, 128);
+}
+h2{
+    font-size: 1.2rem;
+    margin-left: 20px;
+    margin-top: 10px;
+    color: rgba(245, 245, 220, 0.384);
+}
+.image{
+    height: 200px;
+    width : 200px;
+    border-bottom: 2px solid rgba(27, 27, 15, 0.687);
+    border-radius: 20px;
+    padding: 12px;
+}
+.profile{
+     height: 320px;
+    width : 230px;
+    background-color: rgba(75, 74, 74, 0.263);
+    border-radius: 10px;
+}
+.profile h5{
+    word-wrap: break-word;
+    margin: 3px;
+    margin-left: 20px;
+    font-size: 0.8rem;
+    color: #4c4949;
+}
+.profile h4{
+    padding-top: 27px;
+    margin-left: 20px;
+    font-size: 1.2rem;
+    color: #fff;
+}
+.update a{
+    font-size: 0.8rem;
+    padding:4px; 
+    text-decoration: none;
+    color: aliceblue;
+}
+.update #edit{
+    color: rgb(110, 109, 108);
+    margin-left: 15px;
+    padding-top: 27px;
+}
+.update #delete{
+    color: rgba(255, 0, 0, 0.594);
+    margin-right: 90px;
+    padding-top: 27px;
+}
+.update{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.users{
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 1.5em;
+}
+.image img{
+     height: 200px;
+    width : 200px;
+    position: fixed;
+    background-size: cover;
+    object-position: center;
+   
+}
+    </style>
+</head>
+<body>
+      <div class="user">
+        <h3><a href="/">Back</a></h3>
+        <h2>All Users</h2>
+       <div class="users">
+        <%if(users.length>0){%>
+
+             <% users.forEach(function(user){%>
+              
+             <div class="profile">
+        <div class="image">
+            <img src="<%= user.image %>" style="border-radius: 10px;" alt="">
+        </div>
+               <h4><%= user.username %></h4>
+               <h5><%= user.email %></h5>
+              <div class="update">
+                 <a id="edit" href="/edit/<%= user._id %>">Edit</a>
+               <a id="delete" href="/delete/<%= user._id %>">Delete User</a>
+              </div>
+       </div>
+
+
+       <% }) %>
+ 
+       <% } else {%>
+        <h3 style="font-size: 0.9rem;color: rgb(139, 59, 19);">Not User Yet</h3>
+        
+      <%}%>
+    </div>
+</body>
+</html>

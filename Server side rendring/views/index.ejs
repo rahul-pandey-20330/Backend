@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+<body>
+    <div class="user">
+        <a href="/read" style="text-decoration: none;">All Users</a>
+        <h2 style="padding-top: 10px;">Create User</h1>
+        <form action="/create" method="post">
+            <input type="text" name = 'username' placeholder="Name" required><br>
+            <input type="email" name = 'email' placeholder="Email" required><br>
+            <input type="text" name = "image" placeholder="Image url"><br>
+            <input type="submit" name="submit" value="Create User">
+        </form>
+    </div>
+    <script src="/Server side rendring/public/javascript/app.js"></script>
+</body>
+</html>
